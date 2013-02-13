@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?><!--*- coding: utf-8 -*-->
+<!DOCTYPE resources SYSTEM "../../components/xmlbundle/resources.dtd">
+<resources default="en">
+    <!-- new resources -->
+    <entry key="show.all_appointments">
+        <text lang="en">Show all appointments</text>
+        <text lang="de">Einzeltermine anzeigen</text>
+        <text lang="fr">Show all appointments</text>
+        <text lang="es">Show all appointments</text>
+        <text lang="cs">Show all appointments</text>
+        <text lang="nl">Show all appointments</text>
+        <text lang="pl">Show all appointments</text>
+    </entry>
+    <entry key="show.all_reservations">
+        <text lang="en">Show all reservations</text>
+        <text lang="de">Einzeltermine ausblenden</text>
+        <text lang="fr">Show all reservations</text>
+        <text lang="es">Show all reservations</text>
+        <text lang="cs">Show all reservations</text>
+        <text lang="nl">Show all reservations</text>
+        <text lang="pl">Show all reservations</text>
+    </entry>
+    <entry key="reservation.create_with_import_dualis_plugin">
+        <text lang="de">Neue Veranstaltung aus Dualis erstellen</text>
+    </entry>
+    <entry key="dualis_wizard.title">
+        <text lang="de">Assistent zum Anlegen einer Veranstaltung aus Dualis</text>
+    </entry>
+    <entry key="CSV.generate">
+        <text lang="en">Create CSV</text>
+        <text lang="de">CSV erstellen</text>
+        <text lang="fr">Create CSV</text>
+        <text lang="es">Create CSV</text>
+        <text lang="cs">Create CSV</text>
+        <text lang="nl">Create CSV</text>
+        <text lang="pl">Create CSV</text>
+    </entry>
+    <entry key="events.number_selected">
+        <text lang="en">Number of selected events</text>
+        <text lang="de">Anzahl ausgewählter Veranstaltungen</text>
+        <text lang="fr">Number of selected events</text>
+        <text lang="es">Number of selected events</text>
+        <text lang="cs">Number of selected events</text>
+        <text lang="nl">Number of selected events</text>
+        <text lang="pl">Number of selected events</text>
+    </entry>
+    <entry key="events.total_duration">
+        <text lang="en">Duration of selected events</text>
+        <text lang="de">Dauer ausgewählter Veranstaltungen</text>
+        <text lang="fr">Duration of selected events</text>
+        <text lang="es">Duration of selected events</text>
+        <text lang="cs">Duration of selected events</text>
+        <text lang="nl">Duration of selected events</text>
+        <text lang="pl">Duration of selected events</text>
+    </entry>
+    <entry key="events.actual_duration">
+        <text lang="en">Actual duration of selected lectures</text>
+        <text lang="de">Vorlesungsdauer ausgewählter Veranstaltungen</text>
+        <text lang="fr">Net duration of selected lectures</text>
+        <text lang="es">Net duration of selected lectures</text>
+        <text lang="cs">Net duration of selected lectures</text>
+        <text lang="nl">Net duration of selected lectures</text>
+        <text lang="pl">Net duration of selected lectures</text>
+    </entry>
+    <entry key="actual_duration">
+        <text lang="en">Actual lecture duration</text>
+        <text lang="de">Vorlesungsdauer</text>
+        <text lang="fr">Net lecture duration</text>
+        <text lang="es">Net lecture duration</text>
+        <text lang="cs">Net lecture duration</text>
+        <text lang="nl">Net lecture duration</text>
+        <text lang="pl">Net lecture duration</text>
+    </entry>
+    <entry key="hours">
+        <text lang="en">h</text>
+        <text lang="de">Std.</text>
+        <text lang="fr">h</text>
+        <text lang="es">h</text>
+        <text lang="cs">h</text>
+        <text lang="nl">h</text>
+        <text lang="pl">h</text>
+    </entry>
+    <entry key="minutes">
+        <text lang="en">min</text>
+        <text lang="de">Min.</text>
+        <text lang="fr">min</text>
+        <text lang="es">min</text>
+        <text lang="cs">min</text>
+        <text lang="nl">min</text>
+        <text lang="pl">min</text>
+    </entry>
+    <entry key="dualis_import">
+        <text lang="en">Dualis Import</text>
+        <text lang="de">Dualis Import</text>
+        <text lang="fr">Dualis Import</text>
+        <text lang="es">Dualis Import</text>
+        <text lang="cs">Dualis Import</text>
+        <text lang="nl">Dualis Import</text>
+    </entry>
+    <entry key="CSV.save.exists">
+        <text lang="en">already exists.</text>
+        <text lang="de">ist bereits vorhanden.</text>
+        <text lang="fr">already exists.</text>
+        <text lang="es">already exists.</text>
+        <text lang="cs">already exists.</text>
+        <text lang="nl">already exists.</text>
+        <text lang="pl">already exists.</text>
+    </entry>
+    <entry key="CSV.save.replace">
+        <text lang="en">Do you want to replace it?</text>
+        <text lang="de">Wollen Sie sie ersetzen?</text>
+        <text lang="fr">Do you want to replace it?</text>
+        <text lang="es">Do you want to replace it?</text>
+        <text lang="cs">Do you want to replace it?</text>
+        <text lang="nl">Do you want to replace it?</text>
+        <text lang="pl">Do you want to replace it?</text>
+    </entry>
+    <entry key="CSV.save.confirm">
+        <text lang="en">Confirm to save</text>
+        <text lang="de">Speichern bestätigen</text>
+        <text lang="fr">?</text>
+        <text lang="es">?</text>
+        <text lang="cs">?</text>
+        <text lang="nl">?</text>
+        <text lang="pl">?</text>
+    </entry>
+    <entry key="add_selected_resources">
+        <text lang="en">add selected resources</text>
+        <text lang="de">Ausgewählte Ressourcen automatisch hinzufügen</text>
+    </entry>
+
+
+    <entry key="filters">
+        <text lang="en">filters</text>
+        <text lang="de">Filter</text>
+    </entry>
+    <entry key="options">
+        <text lang="en">Options</text>
+        <text lang="de">Einstellungen</text>
+    </entry>
+    <entry key="faculties">
+        <text lang="en">faculties</text>
+        <text lang="de">Fakultäten</text>
+    </entry>
+    <entry key="faculty">
+        <text lang="en">faculty</text>
+        <text lang="de">Fakultät</text>
+    </entry>
+    <entry key="course">
+        <text lang="en">Course</text>
+        <text lang="de">Studiengang</text>
+    </entry>
+    <entry key="class">
+        <text lang="en">class</text>
+        <text lang="de">Kurs</text>
+    </entry>
+    <entry key="room">
+        <text lang="en">Raum</text>
+        <text lang="de">Raum</text>
+    </entry>
+    <entry key="semester">
+        <text lang="en">semester</text>
+        <text lang="de">Semester</text>
+    </entry>
+
+    <entry key="import">
+        <text lang="en">Import from CSV</text>
+        <text lang="de">Importiere aus CSV</text>
+    </entry>
+
+    <entry key="create.reservations">
+        <text lang="en">Create Reservation(s)</text>
+        <text lang="de">Veranstaltung(-en) anlegen</text>
+    </entry>
+
+    <entry key="csv.files">
+        <text lang="en">csv files</text>
+        <text lang="de">CSV-Dateien</text>
+    </entry>
+
+    <entry key="confirm.attribute.add">
+        <text lang="en">Do you really want to add this attribute?</text>
+        <text lang="de">Wollen Sie das Attribut wirklich anlegen?</text>
+    </entry>
+    <entry key="create.attribute">
+        <text lang="en">Create</text>
+        <text lang="de">Anlegen</text>
+    </entry>
+
+
+    <entry key="event-type">
+        <text lang="en">Event Type</text>
+        <text lang="de">Veranstaltungstyp</text>
+    </entry>
+
+    <entry key="event-type-tooltip">
+        <text lang="en">Event Type</text>
+        <text lang="de">Veranstaltungstyp, der zum Anlegen verwendet wird</text>
+    </entry>
+
+    <entry key="course-type">
+        <text lang="en">Resource 1</text>
+        <text lang="de">Kurs Ressource</text>
+    </entry>
+
+    <entry key="course-type-tooltip">
+        <text lang="en">Resource 1</text>
+        <text lang="de">Ressourcentyp, aus dem ein Kurs zugeordnet wird</text>
+    </entry>
+
+    <entry key="room-type">
+        <text lang="en">Resource 2</text>
+        <text lang="de">Raum Ressource</text>
+    </entry>
+
+    <entry key="room-type-tooltip">
+        <text lang="en">Resource 1</text>
+        <text lang="de">Ressourcentyp, aus dem ein Raum zugeordnet wird</text>
+    </entry>
+
+
+    <entry key="person-type">
+        <text lang="en">Resource 2</text>
+        <text lang="de">Personentyp</text>
+    </entry>
+
+    <entry key="person-type-tooltip">
+        <text lang="en">Resource 2</text>
+        <text lang="de">Ressourcentyp, aus dem eine Person zugeordnet wird</text>
+    </entry>
+
+
+    <entry key="attr-primary-key">
+        <text lang="en">Unique Key</text>
+        <text lang="de">Primärschlüssel-Attribut</text>
+    </entry>
+
+    <entry key="attr-primary-key-tooltip">
+        <text lang="en">Unique Key</text>
+        <text lang="de">Das Primärschlüssel-Attribut identifiziert die Veranstaltungen und Ressourcen beim Aktualisieren</text>
+    </entry>
+
+    <entry key="attr-number">
+        <text lang="en">Number</text>
+        <text lang="de">SOLL-Attribut</text>
+    </entry>
+
+    <entry key="attr-number-tooltip">
+        <text lang="en">Number</text>
+        <text lang="de">SOLL-Attribut nimmt Zahlenwerte auf</text>
+    </entry>
+
+
+    <entry key="attr-event-name">
+        <text lang="en">Name Attribute</text>
+        <text lang="de">Titel-Attribut</text>
+    </entry>
+    <entry key="attr-event-name-tooltip">
+        <text lang="en">Attribute containing title of event</text>
+        <text lang="de">Attribut, dass den Veranstaltungstitel trägt</text>
+    </entry>
+
+    <entry key="resource-configuration">
+        <text lang="en"><h3>Resource Configuration</h3><p>Attributes will be used for completion</p></text>
+        <text lang="de"><h3>Ressourcen</h3><p>Die definierten Veranstaltungs- und Ressourcentypen werden beim Import verwendet.</p></text>
+    </entry>
+
+    <entry key="primarykey-configuration">
+        <text lang="en"><h3>Update Configuration</h3><p>Attributes will be used for completion</p></text>
+        <text lang="de"><h3>Konfiguration für Aktualisierungen</h3><p>Der Primärschlüssel wird zur Identifikation bereits importierter Veranstaltungen und Ressourcen verwendet. Dadurch wird ein Aktualisieren möglich.</p></text>
+    </entry>
+    <entry key="eventtype-configuration">
+        <text lang="en"><h3>Event Type Configuration</h3><p>Attributes will be used for completion</p></text>
+        <text lang="de"><h3>Zuordnung der Veranstaltungsattribute</h3><p>Die definierten Veranstaltungsattribute werden durch Werte beim Import gefüllt.</p></text>
+    </entry>
+
+
+</resources>

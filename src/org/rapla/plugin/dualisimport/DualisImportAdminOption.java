@@ -166,7 +166,7 @@ public class DualisImportAdminOption extends DefaultPluginOption implements
 
         final Attribute att = getModification().newAttribute(type);
         att.setKey(attrKey);
-        att.setAnnotation(AttributeAnnotations.KEY_EDIT_VIEW, AttributeAnnotations.VALUE_NO_VIEW);
+        att.setAnnotation(AttributeAnnotations.KEY_EDIT_VIEW, AttributeAnnotations.VALUE_EDIT_VIEW_NO_VIEW);
         att.getName().setName("en", name);
         att.getName().setName("de", name);
         if (!dynamicType.hasAttribute(att)) {

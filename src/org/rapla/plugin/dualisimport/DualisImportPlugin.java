@@ -3,15 +3,10 @@ package org.rapla.plugin.dualisimport;
 import org.apache.avalon.framework.configuration.Configuration;
 import org.rapla.components.xmlbundle.I18nBundle;
 import org.rapla.components.xmlbundle.impl.I18nBundleImpl;
-import org.rapla.entities.dynamictype.Attribute;
 import org.rapla.framework.Container;
 import org.rapla.framework.PluginDescriptor;
 import org.rapla.plugin.RaplaExtensionPoints;
 import org.rapla.plugin.RaplaPluginMetaInfo;
-import org.rapla.plugin.export2ical.Export2iCalAdminOption;
-import org.rapla.plugin.periodwizard.PeriodReservationWizard;
-
-import java.util.Locale;
 
 public class DualisImportPlugin implements PluginDescriptor {
     public static final String RESOURCE_FILE = DualisImportPlugin.class.getPackage().getName() + ".DualisImportResources";

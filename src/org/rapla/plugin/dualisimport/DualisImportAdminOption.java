@@ -1,14 +1,14 @@
 package org.rapla.plugin.dualisimport;
 
-import org.apache.avalon.framework.configuration.Configuration;
-import org.apache.avalon.framework.configuration.ConfigurationException;
-import org.apache.avalon.framework.configuration.DefaultConfiguration;
 import org.rapla.components.xmlbundle.I18nBundle;
 import org.rapla.entities.dynamictype.Attribute;
 import org.rapla.entities.dynamictype.AttributeAnnotations;
 import org.rapla.entities.dynamictype.AttributeType;
 import org.rapla.entities.dynamictype.DynamicType;
 import org.rapla.facade.ClientFacade;
+import org.rapla.framework.Configuration;
+import org.rapla.framework.ConfigurationException;
+import org.rapla.framework.DefaultConfiguration;
 import org.rapla.framework.RaplaContext;
 import org.rapla.framework.RaplaException;
 import org.rapla.gui.DefaultPluginOption;
@@ -178,17 +178,13 @@ public class DualisImportAdminOption extends DefaultPluginOption implements
 
     protected void addChildren(DefaultConfiguration newConfig) {
 
-        try {
-            newConfig.getMutableChild(DualisImportPlugin.DUALIS_EVENT_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboEventType.getSelectedItem()).forObject.getElementKey()));
-            newConfig.getMutableChild(DualisImportPlugin.DUALIS_COURSE_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboCourseType.getSelectedItem()).forObject.getElementKey()));
-            newConfig.getMutableChild(DualisImportPlugin.DUALIS_ROOM_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboRoomType.getSelectedItem()).forObject.getElementKey()));
-            newConfig.getMutableChild(DualisImportPlugin.DUALIS_PERSON_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboPersonType.getSelectedItem()).forObject.getElementKey()));
-            newConfig.getMutableChild(DualisImportPlugin.DUALIS_PK_ATTRIBUTE, true).setValue(String.valueOf(pk.getText()));
-            newConfig.getMutableChild(DualisImportPlugin.DUALIS_SOLL_ATTRIBUTE, true).setValue(String.valueOf(soll.getText()));
-            newConfig.getMutableChild(DualisImportPlugin.DUALIS_NAME_ATTRIBUTE, true).setValue(String.valueOf(((StringWrapper<Attribute>) comboName.getSelectedItem()).forObject.getKey()));
-        } catch (ConfigurationException e) {
-            getLogger().error("An error has occured saving the Export2iCal Configuration " + e.getMessage());
-        }
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_EVENT_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboEventType.getSelectedItem()).forObject.getElementKey()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_COURSE_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboCourseType.getSelectedItem()).forObject.getElementKey()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_ROOM_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboRoomType.getSelectedItem()).forObject.getElementKey()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_PERSON_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboPersonType.getSelectedItem()).forObject.getElementKey()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_PK_ATTRIBUTE, true).setValue(String.valueOf(pk.getText()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_SOLL_ATTRIBUTE, true).setValue(String.valueOf(soll.getText()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_NAME_ATTRIBUTE, true).setValue(String.valueOf(((StringWrapper<Attribute>) comboName.getSelectedItem()).forObject.getKey()));
 
     }
 

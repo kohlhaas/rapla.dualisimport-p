@@ -541,7 +541,7 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
                     @Override
                     protected void process(List<Reservation> chunks) {
                         for (Reservation reservation : chunks) {
-                            pm.setNote("Veranstaltung " + reservation.getName(Locale.getDefault()) + " wird hinzugefügt/aktualisiert.");
+                            pm.setNote("Veranstaltung " + reservation.getName(Locale.getDefault()) + " wird hinzugefuegt/aktualisiert.");
                         }
                     }
 
@@ -561,7 +561,7 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
                                         .append("\n");
                             }
                             // todo: internationalization
-                            JOptionPane.showMessageDialog(contentPane, "Es wurden " + reservations.size() + " Veranstaltungen erfolgreich hinzugefügt/aktualisiert.\n\n" + builder);
+                            JOptionPane.showMessageDialog(contentPane, "Es wurden " + reservations.size() + " Veranstaltungen erfolgreich hinzugefuegt/aktualisiert.\n\n" + builder);
                         } catch (Exception e) {
                             try {
                                 DialogUI error = DialogUI.create(getContext(), contentPane, true, "Error", e.getMessage());

@@ -1,10 +1,10 @@
 package org.rapla.plugin.dualisimport;
 
-import javax.swing.table.TableColumnModel;
-
-import javax.swing.table.*;
-import java.util.Vector;
 import java.util.Enumeration;
+import java.util.Vector;
+
+import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.TableColumn;
 
 /**
  * <code>XTableColumnModel</code> extends the DefaultTableColumnModel .

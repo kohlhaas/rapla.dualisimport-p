@@ -1,13 +1,14 @@
 package org.rapla.plugin.dualisimport;
 
+import java.awt.Component;
+
+import javax.swing.Icon;
+
 import org.rapla.framework.RaplaContext;
 import org.rapla.framework.RaplaException;
 import org.rapla.gui.CalendarModel;
 import org.rapla.gui.RaplaGUIComponent;
 import org.rapla.gui.ReservationWizard;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class DualisImportWizard extends RaplaGUIComponent implements
         ReservationWizard {

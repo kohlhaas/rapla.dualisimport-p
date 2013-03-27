@@ -4,10 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.rapla.components.util.Tools;
-import org.rapla.framework.RaplaException;
 
 public class CSVImport {
     private String[][] entries;

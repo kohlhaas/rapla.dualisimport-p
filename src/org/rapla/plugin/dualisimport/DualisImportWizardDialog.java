@@ -1,15 +1,18 @@
 package org.rapla.plugin.dualisimport;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dialog;
+import java.awt.Frame;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
+import javax.swing.JFrame;
 
 import org.rapla.framework.RaplaContext;
 import org.rapla.framework.RaplaException;
 import org.rapla.gui.CalendarModel;
 import org.rapla.gui.toolkit.DialogUI;
-
-import javax.swing.*;
 
 public class DualisImportWizardDialog extends DialogUI {
     private static final long serialVersionUID = 1L;

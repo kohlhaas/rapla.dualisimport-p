@@ -2,8 +2,6 @@ package org.rapla.plugin.dualisimport;
 
 import java.awt.Component;
 
-import org.rapla.facade.ModificationEvent;
-import org.rapla.facade.ModificationListener;
 import org.rapla.framework.RaplaContext;
 import org.rapla.framework.RaplaException;
 import org.rapla.gui.CalendarModel;

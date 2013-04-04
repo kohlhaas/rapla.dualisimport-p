@@ -9,9 +9,9 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
+import org.rapla.facade.CalendarModel;
 import org.rapla.framework.RaplaContext;
 import org.rapla.framework.RaplaException;
-import org.rapla.gui.CalendarModel;
 import org.rapla.gui.toolkit.DialogUI;
 
 public class DualisImportWizardDialog extends DialogUI {

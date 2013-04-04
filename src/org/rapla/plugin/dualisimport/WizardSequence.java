@@ -2,9 +2,9 @@ package org.rapla.plugin.dualisimport;
 
 import java.awt.Component;
 
+import org.rapla.facade.CalendarModel;
 import org.rapla.framework.RaplaContext;
 import org.rapla.framework.RaplaException;
-import org.rapla.gui.CalendarModel;
 import org.rapla.gui.RaplaGUIComponent;
 
 public class WizardSequence extends RaplaGUIComponent {

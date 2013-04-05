@@ -91,7 +91,7 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
         super(sm);
         this.model = model;
         initConfiguration();
-        this.i18n = (I18nBundle) getService(I18nBundle.ROLE + "/" + DualisImportPlugin.RESOURCE_FILE);
+        this.i18n = (I18nBundle) getService(I18nBundle.class,DualisImportPlugin.RESOURCE_FILE);
 
         contentPane = new JPanel(new BorderLayout());
         contentPane.setBorder(BorderFactory.createEmptyBorder(11, 10, 17, 11));
@@ -786,7 +786,7 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
 
     private void initConfiguration() {
         try {
-            final ClientFacade facade = (ClientFacade) getContext().lookup(ClientFacade.ROLE);
+            final ClientFacade facade = getContext().lookup(ClientFacade.class);
             Preferences prefs = facade.getPreferences(null);
             final RaplaConfiguration raplaConfiguration = (RaplaConfiguration) prefs.getEntry("org.rapla.plugin");
             config = raplaConfiguration.find("class", DualisImportPlugin.PLUGIN_CLASS);

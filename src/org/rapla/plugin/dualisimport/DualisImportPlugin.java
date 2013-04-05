@@ -53,9 +53,9 @@ public class DualisImportPlugin implements PluginDescriptor {
             return;
         // this service allows to use own language information provided by the
         // ExtendedTableViewResources.xml
-        container.addContainerProvidedComponent(I18nBundle.ROLE, I18nBundleImpl.class.getName(), RESOURCE_FILE, I18nBundleImpl.createConfig(RESOURCE_FILE));
-        container.addContainerProvidedComponent(RaplaExtensionPoints.RESERVATION_WIZARD_EXTENSION, DualisImportWizard.class.getName(), PLUGIN_CLASS, config);
-        container.addContainerProvidedComponent(RaplaExtensionPoints.PLUGIN_OPTION_PANEL_EXTENSION, DualisImportAdminOption.class.getName(), PLUGIN_CLASS, config);
+        container.addContainerProvidedComponent(I18nBundle.class, I18nBundleImpl.class, RESOURCE_FILE, I18nBundleImpl.createConfig(RESOURCE_FILE));
+        container.addContainerProvidedComponent(RaplaExtensionPoints.RESERVATION_WIZARD_EXTENSION, DualisImportWizard.class);
+        container.addContainerProvidedComponent(RaplaExtensionPoints.PLUGIN_OPTION_PANEL_EXTENSION, DualisImportAdminOption.class,PLUGIN_CLASS);
 
     }
 

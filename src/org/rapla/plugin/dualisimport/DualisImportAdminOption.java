@@ -48,7 +48,7 @@ public class DualisImportAdminOption extends DefaultPluginOption implements
     public DualisImportAdminOption(RaplaContext sm) throws RaplaException {
         super(sm);
         facade = this.getClientFacade();
-        this.i18n = (I18nBundle) getService(I18nBundle.ROLE + "/" + DualisImportPlugin.RESOURCE_FILE);
+        this.i18n = getService(I18nBundle.class,DualisImportPlugin.RESOURCE_FILE);
     }
 
     protected JPanel createPanel() throws RaplaException {

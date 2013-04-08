@@ -66,6 +66,7 @@ public class CSVImport {
                         writer.append('\n');
                 }
             }
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

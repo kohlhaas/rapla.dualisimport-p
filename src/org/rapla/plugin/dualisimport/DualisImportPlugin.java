@@ -5,25 +5,25 @@ import org.rapla.components.xmlbundle.impl.I18nBundleImpl;
 import org.rapla.framework.Configuration;
 import org.rapla.framework.Container;
 import org.rapla.framework.PluginDescriptor;
+import org.rapla.framework.TypedComponentRole;
 import org.rapla.plugin.RaplaExtensionPoints;
 import org.rapla.plugin.RaplaPluginMetaInfo;
 
 public class DualisImportPlugin implements PluginDescriptor {
-    public static final String RESOURCE_FILE = DualisImportPlugin.class.getPackage().getName() + ".DualisImportResources";
-    public static final String PLUGIN_CLASS = DualisImportPlugin.class.getName();
+    public static final TypedComponentRole<I18nBundle> RESOURCE_FILE = new TypedComponentRole<I18nBundle>( DualisImportPlugin.class.getPackage().getName() + ".DualisImportResources");
     static boolean ENABLE_BY_DEFAULT = true;
 
-    // alle veranstaltungstypen auflisten -> ergebnis ist key für d<ynamic typ(Combobox)
+    // alle veranstaltungstypen auflisten -> ergebnis ist key fuer d<ynamic typ(Combobox)
     public static final String DUALIS_EVENT_TYPE = "dualisEventType";
     // Resourcentypen auflisten                        (Combobox)
     public static final String DUALIS_COURSE_TYPE = "dualisCourseType";
-    // Personenressourcentypen auflisten und auswählen (Combobox)
+    // Personenressourcentypen auflisten und auswaehlen (Combobox)
     public static final String DUALIS_PERSON_TYPE = "dualisPersonType";
     // editierbare Combobox, wenn in veranstaltungstyp, coursetyp, personentyp attr fehlt, dann Fragen und anlegen (nur Textattribute)
     public static final String DUALIS_PK_ATTRIBUTE = "dualisPK";
     // event typ -> fragen und anlegen, wenn nicht da
     public static final String DUALIS_SOLL_ATTRIBUTE = "dualisSoll";
-    // combobox auswählen
+    // combobox auswaehlen
     public static final String DUALIS_NAME_ATTRIBUTE = "name";
     
     public static final int FACULTY_COLUMN = 1;
@@ -53,9 +53,9 @@ public class DualisImportPlugin implements PluginDescriptor {
             return;
         // this service allows to use own language information provided by the
         // ExtendedTableViewResources.xml
-        container.addContainerProvidedComponent(I18nBundle.class, I18nBundleImpl.class, RESOURCE_FILE, I18nBundleImpl.createConfig(RESOURCE_FILE));
+        container.addContainerProvidedComponent(RESOURCE_FILE, I18nBundleImpl.class, I18nBundleImpl.createConfig(RESOURCE_FILE.getId()));
         container.addContainerProvidedComponent(RaplaExtensionPoints.RESERVATION_WIZARD_EXTENSION, DualisImportWizard.class);
-        container.addContainerProvidedComponent(RaplaExtensionPoints.PLUGIN_OPTION_PANEL_EXTENSION, DualisImportAdminOption.class,PLUGIN_CLASS);
+        container.addContainerProvidedComponent(RaplaExtensionPoints.PLUGIN_OPTION_PANEL_EXTENSION, DualisImportAdminOption.class);
 
     }
 

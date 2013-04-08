@@ -26,6 +26,7 @@ import org.rapla.entities.dynamictype.DynamicType;
 import org.rapla.facade.ClientFacade;
 import org.rapla.framework.Configuration;
 import org.rapla.framework.DefaultConfiguration;
+import org.rapla.framework.PluginDescriptor;
 import org.rapla.framework.RaplaContext;
 import org.rapla.framework.RaplaException;
 import org.rapla.gui.DefaultPluginOption;
@@ -48,7 +49,7 @@ public class DualisImportAdminOption extends DefaultPluginOption implements
     public DualisImportAdminOption(RaplaContext sm) throws RaplaException {
         super(sm);
         facade = this.getClientFacade();
-        this.i18n = getService(I18nBundle.class,DualisImportPlugin.RESOURCE_FILE);
+        this.i18n = getService(DualisImportPlugin.RESOURCE_FILE);
     }
 
     protected JPanel createPanel() throws RaplaException {
@@ -233,8 +234,8 @@ public class DualisImportAdminOption extends DefaultPluginOption implements
     }
 
     @Override
-    public String getDescriptorClassName() {
-        return DualisImportPlugin.class.getName();
+    public Class<? extends PluginDescriptor> getPluginClass() {
+        return DualisImportPlugin.class;
     }
 
     public void actionPerformed(ActionEvent e) {

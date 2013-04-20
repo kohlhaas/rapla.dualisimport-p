@@ -234,7 +234,7 @@ public class DualisImportAdminOption extends DefaultPluginOption implements
     }
 
     @Override
-    public Class<? extends PluginDescriptor> getPluginClass() {
+    public Class<? extends PluginDescriptor<?>> getPluginClass() {
         return DualisImportPlugin.class;
     }
 

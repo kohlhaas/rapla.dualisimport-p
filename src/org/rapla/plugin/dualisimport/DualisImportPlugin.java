@@ -10,7 +10,7 @@ import org.rapla.plugin.RaplaClientExtensionPoints;
 
 public class DualisImportPlugin implements PluginDescriptor<ClientServiceContainer> {
     public static final TypedComponentRole<I18nBundle> RESOURCE_FILE = new TypedComponentRole<I18nBundle>( DualisImportPlugin.class.getPackage().getName() + ".DualisImportResources");
-    static boolean ENABLE_BY_DEFAULT = true;
+    public static final boolean ENABLE_BY_DEFAULT = true;
 
     // alle veranstaltungstypen auflisten -> ergebnis ist key fuer d<ynamic typ(Combobox)
     public static final String DUALIS_EVENT_TYPE = "dualisEventType";

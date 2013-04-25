@@ -1,12 +1,12 @@
 package org.rapla.plugin.dualisimport;
 
 import org.rapla.client.ClientServiceContainer;
+import org.rapla.client.RaplaClientExtensionPoints;
 import org.rapla.components.xmlbundle.I18nBundle;
 import org.rapla.components.xmlbundle.impl.I18nBundleImpl;
 import org.rapla.framework.Configuration;
 import org.rapla.framework.PluginDescriptor;
 import org.rapla.framework.TypedComponentRole;
-import org.rapla.plugin.RaplaClientExtensionPoints;
 
 public class DualisImportPlugin implements PluginDescriptor<ClientServiceContainer> {
     public static final TypedComponentRole<I18nBundle> RESOURCE_FILE = new TypedComponentRole<I18nBundle>( DualisImportPlugin.class.getPackage().getName() + ".DualisImportResources");

@@ -19,8 +19,7 @@ public class DualisImportWizardDialog extends DialogUI {
 
     private DualisImportPanel dualisImportPanel;
     private static DualisImportWizardDialog dlg;
-    private CalendarModel model;
-
+    
 
     public static DualisImportWizardDialog getInstance(RaplaContext sm, Component owner, boolean modal, CalendarModel model) throws RaplaException {
         if (dlg == null)

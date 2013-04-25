@@ -788,7 +788,7 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
         try {
             final ClientFacade facade = getContext().lookup(ClientFacade.class);
             Preferences prefs = facade.getPreferences(null);
-            final RaplaConfiguration raplaConfiguration = (RaplaConfiguration) prefs.getEntry("org.rapla.plugin");
+            final RaplaConfiguration raplaConfiguration = prefs.getEntry(RaplaComponent.PLUGIN_CONFIG);
             config = raplaConfiguration.find("class", DualisImportPlugin.class.getName());
         } catch (RaplaException e) {
             getLogger().error("Cannot read plugin configuration");

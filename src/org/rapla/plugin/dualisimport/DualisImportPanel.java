@@ -55,6 +55,7 @@ import org.rapla.entities.domain.Allocatable;
 import org.rapla.entities.domain.Appointment;
 import org.rapla.entities.domain.Reservation;
 import org.rapla.entities.dynamictype.Attribute;
+import org.rapla.entities.dynamictype.Classification;
 import org.rapla.entities.dynamictype.ClassificationFilter;
 import org.rapla.entities.dynamictype.DynamicType;
 import org.rapla.facade.CalendarModel;
@@ -122,14 +123,15 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
         final String dualisCourseType = getDualisSetting(DualisImportPlugin.DUALIS_COURSE_TYPE);
 
 
-        // dynamic type für event bestimmen
+        // dynamic type fuer event bestimmen
         final DynamicType dualisEventType = getClientFacade().getDynamicType(dualisEventT);
 
         final Reservation reservation;
 
-        // nur wenn das PK attribute vorliegt, dann können wir evt.  bestehende reservations aktualisieren
-        if (dualisEventType.getAttribute(dualisPKAttribute) != null) {
-            //attribut set filter laden um zu prüfen, ob event schon existiert
+        // nur wenn das PK attribute vorliegt, dann koennen wir evt.  bestehende reservations aktualisieren
+        Classification classification = dualisEventType.newClassification();
+		if (dualisEventType.getAttribute(dualisPKAttribute) != null) {
+            //attribut set filter laden um zu pruefen, ob event schon existiert
             final ClassificationFilter filter = dualisEventType.newClassificationFilter();
             filter.addEqualsRule(dualisPKAttribute, eventPK);
 
@@ -140,34 +142,31 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
 
             //davon sollte eigentlich nur eines existieren
             Assert.isTrue(existingReservations.length <= 1, "There should be in maximum one reservation for PK " + eventPK);
-
+            
             // neue erzeugen bzw. editierbare alte holen
             if (existingReservations.length == 1) {
                 reservation = getClientFacade().edit(existingReservations[0]);
             } else {
-                reservation = getClientFacade().newReservation();
+                reservation = getClientFacade().newReservation(classification);
             }
 
-            reservation.setClassification(dualisEventType.newClassification());
-
             // atribute liegt vor, also auf jeden fall anlegen
-            reservation.getClassification().setValue(dualisPKAttribute, eventPK);
+            classification.setValue(dualisPKAttribute, eventPK);
         } else {
-            reservation = getClientFacade().newReservation();
-            reservation.setClassification(dualisEventType.newClassification());
+            reservation = getClientFacade().newReservation( classification);
         }
         //sollten die beiden attribute nicht existieren, wird ein Fehler geworfen!
-        reservation.getClassification().setValue(dualisNameAttribute, eventTitle);
-        reservation.getClassification().setValue(dualisSollAttribute, (int) sollStunden);
+		classification.setValue(dualisNameAttribute, eventTitle);
+		classification.setValue(dualisSollAttribute, (int) sollStunden);
 
-        // ersten Termin hinzufügen, nur wenn es noch keinen gibt
+        // ersten Termin hinzufuegen, nur wenn es noch keinen gibt
         if (reservation.getAppointments().length == 0) {
 
             final Appointment appointment = getClientFacade().newAppointment(start, end);
             reservation.addAppointment(appointment);
         }
 
-        // das hinzufügen von kursen ist optional
+        // das hinzufuegen von kursen ist optional
         try {
             final DynamicType dualisKursType = getClientFacade().getDynamicType(dualisCourseType);
             Allocatable course = findMatchingAllocatableByPK(dualisKursType, kursPK);
@@ -177,7 +176,7 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
             getLogger().error("Adding course resource failed", e);
         }
 
-        // das hinzufügen von räumen ist optional
+        // das hinzufuegen von raeumen ist optional
         if (room.getSelectedIndex() > 0) {
             Allocatable raum = ((StringWrapper<Allocatable>) room.getSelectedItem()).forObject;
             if (raum != null)
@@ -192,10 +191,10 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
             }
         }
 
-        // das hinzufügen von personen ist optional
+        // das hinzufuegen von personen ist optional
         try {
             final DynamicType dualisLehrPersonalType = getClientFacade().getDynamicType(dualisPersonType);
-            //bekannte Dozenten anhängen
+            //bekannte Dozenten anhaengen
             for (String dozentenPk : dozentenPrimaryKeys) {
                 Allocatable person = findMatchingAllocatableByPK(dualisLehrPersonalType, dozentenPk);
                 if (person != null)

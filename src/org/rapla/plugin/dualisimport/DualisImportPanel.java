@@ -49,8 +49,6 @@ import javax.swing.table.DefaultTableModel;
 import org.rapla.components.util.Assert;
 import org.rapla.components.util.TimeInterval;
 import org.rapla.components.xmlbundle.I18nBundle;
-import org.rapla.entities.configuration.Preferences;
-import org.rapla.entities.configuration.RaplaConfiguration;
 import org.rapla.entities.domain.Allocatable;
 import org.rapla.entities.domain.Appointment;
 import org.rapla.entities.domain.Reservation;
@@ -59,7 +57,6 @@ import org.rapla.entities.dynamictype.Classification;
 import org.rapla.entities.dynamictype.ClassificationFilter;
 import org.rapla.entities.dynamictype.DynamicType;
 import org.rapla.facade.CalendarModel;
-import org.rapla.facade.ClientFacade;
 import org.rapla.facade.RaplaComponent;
 import org.rapla.framework.Configuration;
 import org.rapla.framework.ConfigurationException;
@@ -88,10 +85,10 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
     private JCheckBox chkAddSelectedResources;
     private JLabel selectedResources;
 
-    public DualisImportPanel(RaplaContext sm, CalendarModel model) throws RaplaException {
+    public DualisImportPanel(RaplaContext sm,Configuration config, CalendarModel model) throws RaplaException {
         super(sm);
+        this.config = config;
         this.model = model;
-        initConfiguration();
         this.i18n = getService(DualisImportPlugin.RESOURCE_FILE);
 
         contentPane = new JPanel(new BorderLayout());
@@ -783,16 +780,6 @@ class DualisImportPanel extends RaplaComponent implements RaplaWidget
         });
     }
 
-    private void initConfiguration() {
-        try {
-            final ClientFacade facade = getContext().lookup(ClientFacade.class);
-            Preferences prefs = facade.getPreferences(null);
-            final RaplaConfiguration raplaConfiguration = prefs.getEntry(RaplaComponent.PLUGIN_CONFIG);
-            config = raplaConfiguration.find("class", DualisImportPlugin.class.getName());
-        } catch (RaplaException e) {
-            getLogger().error("Cannot read plugin configuration");
-        }
-    }
 
 }
 

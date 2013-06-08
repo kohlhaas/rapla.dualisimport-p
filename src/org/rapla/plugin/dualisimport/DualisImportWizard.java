@@ -3,19 +3,22 @@ package org.rapla.plugin.dualisimport;
 import java.awt.Component;
 import java.awt.Dialog;
 import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.Icon;
+import javax.swing.MenuElement;
 
 import org.rapla.facade.CalendarModel;
 import org.rapla.framework.Configuration;
 import org.rapla.framework.RaplaContext;
 import org.rapla.framework.RaplaException;
 import org.rapla.gui.RaplaGUIComponent;
-import org.rapla.gui.ReservationWizard;
 import org.rapla.gui.toolkit.DialogUI;
+import org.rapla.gui.toolkit.IdentifiableMenuEntry;
+import org.rapla.gui.toolkit.RaplaMenuItem;
 
 public class DualisImportWizard extends RaplaGUIComponent implements
-        ReservationWizard {
+        IdentifiableMenuEntry, ActionListener {
 
     Configuration config;
 
@@ -28,9 +31,33 @@ public class DualisImportWizard extends RaplaGUIComponent implements
         setChildBundleName(DualisImportPlugin.RESOURCE_FILE);
     }
 
-    public void start(Component owner, CalendarModel model) throws RaplaException {
-        DualisImportWizardDialog wizardDialog = getInstance(getContext(), config,owner, false, model);
-        wizardDialog.startNoPack();
+	 public String getId() {
+			return "300_dualisimportWizard";
+	}
+
+	public MenuElement getMenuElement() {
+		RaplaMenuItem item = new RaplaMenuItem( getId());
+		item.setText( getString("reservation.create_with_import_dualis_plugin"));
+		item.setIcon( getIcon("icon.new"));
+		item.addActionListener( this);
+		boolean canCreateReservation = canCreateReservation();
+        item.setEnabled( canAllocate() && canCreateReservation);
+		return item;
+	}
+    
+
+	public void actionPerformed(ActionEvent e) {
+		Component mainComponent = getMainComponent();
+		try
+		{
+			CalendarModel model = getService(CalendarModel.class);
+			DualisImportWizardDialog wizardDialog = getInstance(getContext(), config,mainComponent, false, model);
+		    wizardDialog.startNoPack();
+		}
+		catch (RaplaException ex)
+		{
+			showException( ex, mainComponent);
+		}
     }
 
 
@@ -49,12 +76,5 @@ public class DualisImportWizard extends RaplaGUIComponent implements
     }
 
 
-    public String toString() {
-        return getString("reservation.create_with_import_dualis_plugin");
-    }
-
-    public Icon getIcon() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
 
 }

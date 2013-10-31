@@ -21,9 +21,11 @@
         <text lang="pl">Show all reservations</text>
     </entry>
     <entry key="reservation.create_with_import_dualis_plugin">
+        <text lang="en">create new reservation from Dualis</text>
         <text lang="de">Neue Veranstaltung aus Dualis erstellen</text>
     </entry>
     <entry key="dualis_wizard.title">
+        <text lang="en">Wizard to create a new reservation from Dualis</text>
         <text lang="de">Assistent zum Anlegen einer Veranstaltung aus Dualis</text>
     </entry>
     <entry key="CSV.generate">

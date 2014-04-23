@@ -188,10 +188,10 @@ public class DualisImportAdminOption extends DefaultPluginOption implements
 
     protected void addChildren(DefaultConfiguration newConfig) {
 
-        newConfig.getMutableChild(DualisImportPlugin.DUALIS_EVENT_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboEventType.getSelectedItem()).forObject.getElementKey()));
-        newConfig.getMutableChild(DualisImportPlugin.DUALIS_COURSE_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboCourseType.getSelectedItem()).forObject.getElementKey()));
-        newConfig.getMutableChild(DualisImportPlugin.DUALIS_ROOM_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboRoomType.getSelectedItem()).forObject.getElementKey()));
-        newConfig.getMutableChild(DualisImportPlugin.DUALIS_PERSON_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboPersonType.getSelectedItem()).forObject.getElementKey()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_EVENT_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboEventType.getSelectedItem()).forObject.getKey()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_COURSE_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboCourseType.getSelectedItem()).forObject.getKey()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_ROOM_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboRoomType.getSelectedItem()).forObject.getKey()));
+        newConfig.getMutableChild(DualisImportPlugin.DUALIS_PERSON_TYPE, true).setValue(String.valueOf(((StringWrapper<DynamicType>) comboPersonType.getSelectedItem()).forObject.getKey()));
         newConfig.getMutableChild(DualisImportPlugin.DUALIS_PK_ATTRIBUTE, true).setValue(String.valueOf(pk.getText()));
         newConfig.getMutableChild(DualisImportPlugin.DUALIS_SOLL_ATTRIBUTE, true).setValue(String.valueOf(soll.getText()));
         newConfig.getMutableChild(DualisImportPlugin.DUALIS_NAME_ATTRIBUTE, true).setValue(String.valueOf(((StringWrapper<Attribute>) comboName.getSelectedItem()).forObject.getKey()));

@@ -3,7 +3,6 @@ package org.rapla.plugin.dualisimport;
 import org.rapla.client.ClientServiceContainer;
 import org.rapla.client.RaplaClientExtensionPoints;
 import org.rapla.components.xmlbundle.I18nBundle;
-import org.rapla.components.xmlbundle.impl.I18nBundleImpl;
 import org.rapla.framework.Configuration;
 import org.rapla.framework.PluginDescriptor;
 import org.rapla.framework.TypedComponentRole;
@@ -52,7 +51,7 @@ public class DualisImportPlugin implements PluginDescriptor<ClientServiceContain
             return;
         // this service allows to use own language information provided by the
         // ExtendedTableViewResources.xml
-        container.addContainerProvidedComponent(RESOURCE_FILE, I18nBundleImpl.class, I18nBundleImpl.createConfig(RESOURCE_FILE.getId()));
+        container.addResourceFile(RESOURCE_FILE);
         container.addContainerProvidedComponent(RaplaClientExtensionPoints.RESERVATION_WIZARD_EXTENSION, DualisImportWizard.class, config);
         container.addContainerProvidedComponent(RaplaClientExtensionPoints.PLUGIN_OPTION_PANEL_EXTENSION, DualisImportAdminOption.class);
 
